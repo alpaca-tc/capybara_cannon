@@ -3,12 +3,11 @@ require 'optparse'
 module CapybaraCannon
   class OptionParser
     def initialize
-      @options = {}
+      @configuration = CapybaraCannon.configuration
     end
 
     def parse(args)
       option_parser.parse!(args.clone)
-      @options
     end
 
     private
@@ -21,7 +20,7 @@ module CapybaraCannon
         parser.on('--file FILE') do |file|
           file = File.expand_path(file)
           raise ArgumentError, "missing file(#{file})" unless File.exists?(file)
-          @options[:file] = File.expand_path(file)
+          CapybaraCannon.configuration[:file] = file
         end
       end
     end
