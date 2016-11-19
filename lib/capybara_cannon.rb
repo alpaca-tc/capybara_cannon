@@ -1,4 +1,4 @@
-module CapybaraCanon
+module CapybaraCannon
   def self.start(argv)
   end
 end

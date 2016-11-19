@@ -2,6 +2,6 @@
 
 $LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
 
-require 'capybara_canon'
+require 'capybara_cannon'
 
-CapybaraCanon.start(ARGV)
+CapybaraCannon.start(ARGV)
