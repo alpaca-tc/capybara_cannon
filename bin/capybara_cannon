@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
+require 'bundler'
+
+ENV['GEM_PATH'] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
+Gem.paths = ENV
+
 $LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
 
+require 'pry' # TODO: 外しても良い
 require 'capybara_cannon'
 
 CapybaraCannon.start(ARGV)

@@ -1,4 +1,5 @@
-require 'optparse'
+require 'capybara'
+require 'capybara/dsl'
 
 module CapybaraCannon
   class Evaluator
