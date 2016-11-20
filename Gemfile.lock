@@ -1,3 +1,12 @@
+PATH
+  remote: .
+  specs:
+    capybara_cannon (0.0.1)
+      capybara (>= 2.10.0)
+      poltergeist (>= 1.11.0)
+      pry (>= 0.10.0)
+      selenium-webdriver (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,10 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
-  poltergeist
-  pry
-  selenium-webdriver
+  capybara_cannon!
 
 BUNDLED WITH
    1.13.6
