@@ -1,10 +1,14 @@
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/poltergeist'
+require 'selenium-webdriver'
 
 module CapybaraCannon
   class Evaluator
     include Capybara::DSL
+    extend Forwardable
+
+    def_delegators :driver, :cookies, :remove_cookie, :set_cookie, :cookies
 
     def initialize
       run_server false
