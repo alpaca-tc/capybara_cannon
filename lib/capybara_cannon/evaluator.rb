@@ -11,8 +11,8 @@ module CapybaraCannon
     def_delegators :driver, :cookies, :remove_cookie, :set_cookie, :cookies
 
     def initialize
-      run_server false
-      default_driver :poltergeist
+      Capybara.run_server = false
+      Capybara.default_driver = :poltergeist
     end
 
     def current_session
@@ -47,6 +47,8 @@ module CapybaraCannon
         # g.u
         #   `app_host('https://example.com')` #=> Capybara.configure(&:itself).app_host = 'https://example.com'
         configuration(configuration_method, *args)
+      elsif Capybara.respond_to?(action)
+        Capybara.public_send(action, *args)
       else
         super
       end
